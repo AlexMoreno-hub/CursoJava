@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Ejercicio19 {
@@ -32,7 +33,10 @@ public class Ejercicio19 {
 			}
 		}
 		
-		
+		//Emleamos el metodo toString de la clase Arrays y le pasamos como valor la variable del array
+		//Nos devuelve una cadena de texto con el contenido del array
+		String contenidoArray = Arrays.toString(numeros);
+		System.out.println(contenidoArray);
 	}
 
 }
