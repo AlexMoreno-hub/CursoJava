@@ -13,6 +13,9 @@ public class TablasMultiplicar {
 		int suma=0;
 		for(int numero=1; numero<=10; numero++)
 		{	
+			System.out.println("Tabla del : " + numero);
+			//Inicializamos a 0 para que cada vez que recorra el bucle empieze en 0
+			suma=0;
 			for(int multiplicado=1;multiplicado<=10;multiplicado++) 
 			{
 				resultado= numero * multiplicado;
