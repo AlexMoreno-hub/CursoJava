@@ -18,20 +18,22 @@ public class Ejercicio12 {
 		System.out.println("Introduce numero");
 		numero=sc.nextInt();
 		
+		if (numero<2) {
+			primo = false;
+		}
 		for(int i=2; i<numero && primo==true ;i++) {
 			
 			resto= numero%i;
 			
-			if(resto == 0) {
-				primo = false;		
-			}
+			if(resto == 0) primo = false;		
 		}
-			if(primo == true) {
-				System.out.println("Es primo");
-			}
-			else {
-				System.out.println("No es primo");
-			}
+		
+	
+		String mensaje= (primo) ? "Es primo" : "No es primo";
+		
+		System.out.println(mensaje);
+		
+		sc.close();
 		
 		}
 	}
