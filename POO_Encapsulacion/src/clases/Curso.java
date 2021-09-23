@@ -8,6 +8,12 @@ public class Curso {
 	private int horas;
 	private String academia;
 
+	public void curso() {
+		
+		setDenominacion("");
+		setHoras(0);
+		setAcademia(" ");
+	}
 	
 	public String getDenominacion() {
 		return denominacion;
