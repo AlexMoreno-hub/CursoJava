@@ -2,6 +2,9 @@ package repositorios;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 
@@ -17,15 +20,25 @@ public class RepoAlumno extends BaseDatos implements ICRUD<Alumno,Integer>
 	}
 
 	
-	private Alumno alumno;
 	private String sql;
 	private PreparedStatement ps;
-	
-	
+	private Statement stmt;
+	private ResultSet rs;
 	
 	@Override
-	public ArrayList<Alumno> listar() {
-		// TODO Auto-generated method stub
+	public ArrayList<Alumno> listar() throws Exception {
+		Alumno al;
+		super.conectar();
+		this.stmt = super.conexion.createStatement(); 
+		this.sql= "SELECT matricula,nombre,apellido FROM Alumno" ;
+		rs = this.stmt.executeQuery(sql); 
+		
+		while(rs.next() == true) 
+		{
+			al = new Alumno(rs.getInt("matricula"),rs.getString("nombre"),rs.getString("apellido"));
+			System.out.println(al.toString());
+		}
+		super.desconectar();
 		return null;
 	}
 

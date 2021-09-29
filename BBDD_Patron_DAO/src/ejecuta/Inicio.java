@@ -13,7 +13,7 @@ public class Inicio {
 		Alumno alumno= new Alumno();
 		RepoAlumno repo= new RepoAlumno("185.224.138.154", "u581554845_alumno","Root1234","u581554845_indra");
 		Scanner sc= new Scanner(System.in);
-		
+		/*
 		System.out.println("Introduce matrícula");
 		alumno.matricula= Integer.valueOf(sc.nextLine());
 		
@@ -28,6 +28,14 @@ public class Inicio {
 		} catch (Exception e) {
 			System.out.println("NO se ha añadido");
 		}
+		*/
+		try {
+			repo.listar();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 
 }
